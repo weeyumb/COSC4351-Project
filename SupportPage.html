@@ -2,6 +2,8 @@
 <html>
     <!-- This is to add external JavaScript File -->
     <script src = "HomePageJS.js"></script>
+    <script src="AdminTemplate.js"></script>
+    <script src="SupportAdmin.js"></script>
     <!-- This is to add external CSS File -->
     <link rel="stylesheet" href="HomePageCSS.css">
 <body>
@@ -25,14 +27,26 @@
     Support Links
 </h3>
 
-<p style = "text-align:center;">
-    <a href="#">Manage User Accounts</a>
-</p>
-<p style = "text-align:center;">
-    <a href="#">Assign Roles</a>
-</p>
-<p style = "text-align:center;">
-    <a href="#">Help Desk</a>
-</p>
+<script>
+    let admin = new SupportAdmin();
+	
+    if(admin instanceof Admin){
+        let links = admin.retrieveLinks();
+        for(var i = 0; i < links.length; i++){
+	    var p = document.createElement("p");
+            var a = document.createElement("a");
+            var link = document.createTextNode(links[i]);
+
+            a.appendChild(link);
+            a.href = "#";
+
+	        p.appendChild(a);
+	        p.style.textAlign = "center";
+	
+	        document.body.appendChild(p);
+        }
+    }      
+</script>
+
 </body>
 </html>
