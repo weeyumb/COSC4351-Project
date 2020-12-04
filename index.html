@@ -4,23 +4,43 @@
         <title>Admin Portal</title>
         <link rel="stylesheet" href="sample.css">
     </head>
+
+    <script src = "HomePageJS.js"></script>
     
     <body>
-        <div class="content">
-            <h1 style = "text-align:center;">
-                <a style="text-decoration:none" href="index.html">Admin Portal</a>
-            </h1>
+
+	<select id = "mySelect" onchange = "getActiveAdminRole()">
+	     <option value = "ADMIN">Support</option>
+    	     <option value = "FINANCE_ADMIN">Finance</option>  
+             <option value = "SALES_ADMIN">Sales</option>
+    	     <option value = "HR_ADMIN">HR</option>   
+             <option value = "TECH_ADMIN">Technology</option>
+         </select>
+
+         <p id = "role"><b>Current Active Role:</b> ADMIN</p>
+
+         <div class="content">
+             <h1 style = "text-align:center;">
+	     	<a style="text-decoration:none" href="index.html">Admin Portal</a>
+	     </h1>
+             <hr> </hr>
+         </div>
+
+       
+         <div class = "container" style = "text-align:center;">
+             <div class="content">
+                 <a href="#" class="btn" id="admin">Support</a>
+                 <a href="#" class="btn" id="financeAdmin">Finance</a>
+                 <a href="#" class="btn" id="salesAdmin">Sales</a>
+                 <a href="#" class="btn" id="hrAdmin">HR</a>
+                 <a href="#" class="btn" id="techAdmin">Technology</a>
+             </div>
+
+             <br></br>
+
+             <h2 id = "accessDenied" style = "color:red;"></h2>
+             <p id = "reason" style = "color:red;"></p>
         </div>
 
-       <div class = "container" style = "text-align:center;">
-            <div class="content" style = "text-align:center;">
-                <a href="SupportPage.html" class="btn">Support</a>
-                <a href="FinancePage.html" class="btn">Finance</a>
-                <a href="SalesPage.html" class="btn">Sales</a>
-                <a href="HRPage.html" class="btn">HR</a>
-                <a href="TechnologyPage.html" class="btn">Technology</a>
-           </div>
-        </div>
-        
     </body>
 </html>
